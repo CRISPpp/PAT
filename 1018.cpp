@@ -1,4 +1,3 @@
-// 三个点过不了，不知道哪的细节错了艹
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -52,6 +51,14 @@ void dfs(int curDis, int curIdx, int needToTake, int haveNow, unordered_map<int,
             ret = tmp;
             take = needToTake;
             takeBack = haveNow;
+        }
+        else
+        {
+            if (take == needToTake && takeBack > haveNow)
+            {
+                ret = tmp;
+                takeBack = haveNow;
+            }
         }
         return;
     }
